@@ -1,37 +1,37 @@
 ﻿# Santander Dev Week 2023
 
- classDiagram
+classDiagram
   class User {
-    -String name
-    -Account account
-    -Feature[] features 
-    -Card card
-    -News[] news
+    -name: String
+    -account: Account
+    -features: Feature[]
+    -card: Card
+    -news: News[]
   }
   
   class Account {
-    -String number
-    -String agency
-    -Number balance
-    -Number limit
+    -number: String
+    -agency: String
+    -balance: Float
+    -limit: Float
   }
   
   class Feature {
-    -String icon
-    -String description
+    -icon: String
+    -description: String
   }
   
   class Card {
-    -String number
-    -Number limit
+    -number: String
+    -limit: Float
   }
   
   class News {
-    -String icon
-    -String description
+    -icon: String
+    -description: String
   }
   
-  User "1" *-- "1" Account
-  User "1" *-- "n" Feature
-  User "1" *-- "1" Card
-  User "1" *-- "n" News
+  User "1" *-- "1" Account : has
+  User "1" *-- "n" Feature : has
+  User "1" *-- "1" Card : has
+  User "1" *-- "n" News : has
